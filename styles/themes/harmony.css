@@ -1,0 +1,40 @@
+[data-theme='harmony'] {
+  --bg-primary: #0f1713;
+  --bg-secondary: #14201a;
+  --bg-tertiary: #1a2922;
+  --bg-quaternary: #23352c;
+  --bg-hover: #2b4036;
+  --bg-active: #334b40;
+
+  --border-primary: #3d584a;
+  --border-secondary: #4a6757;
+
+  --text-primary: #ecf6ef;
+  --text-secondary: #b7cec0;
+  --text-muted: #8ca899;
+  --text-names: #d4e7da;
+
+  --green-primary: #67d38a;
+  --green-hover: #7fe4a0;
+  --green-active: #95f5b5;
+  --green-dark: #3e9461;
+  --green-glow: rgba(103, 211, 138, 0.35);
+
+  --danger: #f26c72;
+  --warning: #f0bd61;
+  --info: #69b8ff;
+  --status-online: #67d38a;
+  --status-idle: #f0bd61;
+  --status-dnd: #f26c72;
+  --status-offline: #8ca899;
+
+  --overlay-backdrop: rgba(0, 0, 0, 0.70);
+  --scrollbar-track: var(--bg-secondary);
+  --scrollbar-thumb: var(--border-secondary);
+  --scrollbar-thumb-hover: var(--text-muted);
+
+  --badge-danger: #ed4245;
+  --badge-mention: #9b59b6;
+  --badge-unread: #4f545c;
+}
+

@@ -1,0 +1,17 @@
+{
+  "name": "@collab/lib",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./*": "./*.ts"
+  },
+  "dependencies": {
+    "drizzle-orm": "^0.45.1",
+    "ioredis": "^5.7.0",
+    "jose": "^6.1.3",
+    "jsonwebtoken": "^9.0.2",
+    "postgres": "^3.4.8",
+    "zod": "^3.22.4"
+  }
+}

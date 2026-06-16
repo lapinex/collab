@@ -1,0 +1,37 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/no-unused-vars": ["error", {
+      "argsIgnorePattern": "^_",
+      "varsIgnorePattern": "^_",
+      "caughtErrorsIgnorePattern": "^_"
+    }],
+    "no-console": "off",
+    "@next/next/no-img-element": "off"
+  },
+  "overrides": [
+    {
+      "files": ["hooks/**/*.ts", "hooks/**/*.tsx", "components/**/*.tsx", "stores/**/*.ts", "contexts/**/*.tsx", "app/**/page.tsx", "app/**/layout.tsx", "app/**/loading.tsx", "app/**/error.tsx", "app/**/not-found.tsx", "lib/realtime/**/*.ts", "lib/voice-runtime/**/*.ts", "lib/voice-session/**/*.ts", "lib/livekit/init.ts"],
+      "rules": {
+        "no-restricted-imports": ["error", { "patterns": ["**/lib/env/serverEnv*", "**/lib/server/*"] }],
+        "no-restricted-syntax": ["error", {
+          "selector": "MemberExpression[object.name='process'][property.name='env']",
+          "message": "Use clientEnv from @/lib/env/clientEnv in client code. process.env is not allowed here (secret isolation)."
+        }]
+      }
+    }
+  ],
+  "ignorePatterns": [
+    "node_modules/",
+    ".next/",
+    "dist/",
+    "out/",
+    "**/*.d.ts"
+  ]
+}

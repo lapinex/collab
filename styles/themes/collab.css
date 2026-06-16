@@ -1,0 +1,40 @@
+[data-theme='collab'] {
+  --bg-primary: #000000;
+  --bg-secondary: #0a0a0a;
+  --bg-tertiary: #111111;
+  --bg-quaternary: #1a1a1a;
+  --bg-hover: #222222;
+  --bg-active: #2a2a2a;
+
+  --border-primary: #333333;
+  --border-secondary: #444444;
+
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --text-muted: #777777;
+  --text-names: #cccccc;
+
+  --green-primary: #76b900;
+  --green-hover: #8ed100;
+  --green-active: #a3ff00;
+  --green-dark: #5a8c00;
+  --green-glow: rgba(118, 185, 0, 0.4);
+
+  --danger: #ff3333;
+  --warning: #ffb300;
+  --info: #0095ff;
+  --status-online: #76b900;
+  --status-idle: #ffb300;
+  --status-dnd: #ff3333;
+  --status-offline: #888888;
+
+  --overlay-backdrop: rgba(0, 0, 0, 0.78);
+  --scrollbar-track: var(--bg-secondary);
+  --scrollbar-thumb: var(--border-secondary);
+  --scrollbar-thumb-hover: var(--text-muted);
+
+  --badge-danger: #ed4245;
+  --badge-mention: #9b59b6;
+  --badge-unread: #4f545c;
+}
+

@@ -1,0 +1,214 @@
+/* Импорт до @tailwind — иногда помогает эмиту CSS в standalone (Next.js) */
+@import './dummy.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './preflight.css';
+@import './tokens.css';
+@import './themes/collab.css';
+@import './themes/classic.css';
+@import './themes/harmony.css';
+@import './themes/neutral.css';
+@import './tokens-v2.css';
+
+@layer base {
+  :root {
+    /* Legacy compatibility */
+    --background: var(--bg-primary);
+    --foreground: var(--text-primary);
+    --primary: var(--green-primary);
+    --primary-foreground: var(--bg-primary);
+    --secondary: var(--bg-tertiary);
+    --secondary-foreground: var(--text-primary);
+    --muted: var(--bg-tertiary);
+    --muted-foreground: var(--text-secondary);
+    --accent: var(--green-primary);
+    --accent-foreground: var(--bg-primary);
+    --destructive: var(--danger);
+    --destructive-foreground: var(--text-primary);
+    --border: var(--border-primary);
+    --input: var(--bg-tertiary);
+    --ring: var(--green-primary);
+    --radius: var(--radius-md);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  html,
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  html:not([data-theme]) {
+    color-scheme: dark;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--scrollbar-track, var(--bg-secondary));
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb, var(--border-secondary));
+    border-radius: 3px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover, var(--text-muted));
+  }
+}
+
+@layer utilities {
+  /* Green glow effect for focus states */
+  .green-glow {
+    box-shadow: 0 0 0 3px var(--green-glow);
+  }
+  
+  .green-glow-sm {
+    box-shadow: 0 0 8px var(--green-glow);
+  }
+  
+  .green-glow-lg {
+    box-shadow: 0 0 16px var(--green-glow);
+  }
+  
+  /* Text gradient for special elements */
+  .text-gradient-green {
+    background: linear-gradient(135deg, var(--green-primary), var(--green-active));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Active indicator bar */
+  .active-indicator {
+    border-left: 4px solid var(--green-primary);
+  }
+  
+  /* Hover transition */
+  .hover-transition {
+    transition: all 0.15s ease-in-out;
+  }
+
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInFromBottom {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInFromTop {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInFromLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes zoomIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.2s ease-out forwards;
+  }
+
+  .animate-slide-in-bottom {
+    animation: slideInFromBottom 0.2s ease-out forwards;
+  }
+
+  .animate-slide-in-top {
+    animation: slideInFromTop 0.2s ease-out forwards;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInFromLeft 0.2s ease-out forwards;
+  }
+
+  .animate-zoom-in {
+    animation: zoomIn 0.2s ease-out forwards;
+  }
+
+  @keyframes reactionPop {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  .animate-reaction-pop {
+    animation: reactionPop 0.3s ease-out;
+  }
+
+  @keyframes mentionPulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(155, 89, 182, 0.7);
+    }
+    100% {
+      box-shadow: 0 0 0 8px rgba(155, 89, 182, 0);
+    }
+  }
+
+  .animate-mention-pulse {
+    animation: mentionPulse 2.4s ease-out infinite;
+  }
+}

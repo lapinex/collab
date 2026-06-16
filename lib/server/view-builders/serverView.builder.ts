@@ -1,0 +1,1 @@
+export { buildServerView } from './server';

@@ -1,0 +1,119 @@
+/**
+ * Centralized limits and constants for app and API validation.
+ * Keep in sync with services/api/src/constants.ts (API is self-contained).
+ */
+
+export const MESSAGE_LIMITS = {
+  MAX_CONTENT_LENGTH: 4000,
+  MAX_REPLY_DEPTH: 5,
+  MAX_ATTACHMENTS_PER_MESSAGE: 10,
+  MAX_MESSAGES_PER_MINUTE: 20,
+  MAX_EDIT_TIME_MINUTES: 15,
+  MAX_MENTION_OPTIONS: 8,
+} as const;
+
+export const FILE_LIMITS = {
+  MAX_FILE_SIZE: 10 * 1024 * 1024, // 10MB
+  MAX_IMAGE_SIZE: 5 * 1024 * 1024, // 5MB
+  MAX_VIDEO_SIZE: 50 * 1024 * 1024, // 50MB
+  MAX_GIF_SIZE: 8 * 1024 * 1024, // 8MB
+  ALLOWED_IMAGE_TYPES: ['image/jpeg', 'image/png', 'image/gif', 'image/webp'] as const,
+  ALLOWED_VIDEO_TYPES: ['video/mp4', 'video/webm', 'video/quicktime'] as const,
+} as const;
+
+export const SERVER_LIMITS = {
+  MAX_CHANNELS_PER_SERVER: 500,
+  MAX_ROLES_PER_SERVER: 250,
+  MAX_EMOJIS_PER_SERVER: 100,
+  MAX_STICKERS_PER_SERVER: 50,
+  MAX_MEMBERS_PER_SERVER: 100000,
+  MAX_INVITES_PER_SERVER: 1000,
+  MAX_SERVER_NAME_LENGTH: 100,
+  MAX_ROLE_NAME_LENGTH: 100,
+  MAX_CHANNEL_NAME_LENGTH: 100,
+  MAX_CHANNEL_TOPIC_LENGTH: 1024,
+  MAX_DESCRIPTION_LENGTH: 500,
+} as const;
+
+export const USER_LIMITS = {
+  MAX_SERVERS_PER_USER: 100,
+  MAX_FRIENDS: 1000,
+  MAX_DM_CHANNELS: 500,
+  MAX_BLOCKED_USERS: 500,
+  MAX_USERNAME_LENGTH: 32,
+  MIN_USERNAME_LENGTH: 2,
+  MAX_BIO_LENGTH: 500,
+  MAX_DISPLAY_NAME_LENGTH: 100,
+  MIN_PASSWORD_LENGTH: 8,
+  MAX_CUSTOM_STATUS_LENGTH: 100,
+} as const;
+
+export const RATE_LIMITS = {
+  API_DEFAULT: { windowMs: 15 * 60 * 1000, max: 300 },
+  API_AUTH: { windowMs: 15 * 60 * 1000, max: 5 },
+  API_MESSAGES: { windowMs: 60 * 1000, max: 30 },
+  API_PRESENCE: { windowMs: 30 * 1000, max: 10 },
+} as const;
+
+export const CACHE_TTL = {
+  SERVER_VIEW: 5 * 60 * 1000, // 5 min
+  CHANNEL_VIEW: 5 * 60 * 1000,
+  USER_PROFILE: 10 * 60 * 1000,
+  PERMISSIONS: 15 * 60 * 1000,
+  PRESENCE: 30 * 1000,
+  ONLINE_USERS: 60 * 1000,
+} as const;
+
+export const PAGINATION = {
+  MESSAGES_DEFAULT_LIMIT: 50,
+  MESSAGES_MAX_LIMIT: 100,
+  MEMBERS_DEFAULT_LIMIT: 100,
+  MEMBERS_MAX_LIMIT: 1000,
+  SERVERS_DEFAULT_LIMIT: 50,
+  SERVERS_MAX_LIMIT: 100,
+  CHANNELS_DEFAULT_LIMIT: 100,
+  CHANNELS_MAX_LIMIT: 100,
+} as const;
+
+export const VOICE_LIMITS = {
+  MAX_PARTICIPANTS_PER_CHANNEL: 99,
+  MAX_BITRATE: 512000, // 512 kbps
+  MIN_BITRATE: 8000, // 8 kbps
+  MAX_SCREEN_SHARE_FPS: 60,
+  MAX_SCREEN_SHARE_RESOLUTION: '1920x1080',
+} as const;
+
+export const EMOJI_STICKER_LIMITS = {
+  MAX_EMOJI_SIZE: 100 * 1024, // 100 KB (aligned with MEDIA_LIMITS)
+  MAX_STICKER_SIZE: 500 * 1024, // 500 KB
+  MAX_EMOJI_NAME_LENGTH: 32,
+  MAX_STICKER_NAME_LENGTH: 50,
+} as const;
+
+export const INVITE_LIMITS = {
+  MAX_INVITES_PER_SERVER: 1000,
+  INVITE_CODE_LENGTH: 8,
+  MAX_INVITE_USES: 100,
+  INVITE_MAX_AGE_DAYS: 7,
+} as const;
+
+/**
+ * Media size and type limits (legacy name). Prefer FILE_LIMITS for new code.
+ * EMOJI_MAX_SIZE / STICKER_MAX_SIZE match EMOJI_STICKER_LIMITS.
+ */
+export const MEDIA_LIMITS = {
+  MAX_FILE_SIZE: FILE_LIMITS.MAX_FILE_SIZE,
+  MAX_IMAGE_SIZE: FILE_LIMITS.MAX_IMAGE_SIZE,
+  MAX_VIDEO_SIZE: FILE_LIMITS.MAX_VIDEO_SIZE,
+  MAX_GIF_SIZE: FILE_LIMITS.MAX_GIF_SIZE,
+  ALLOWED_MIME_TYPES: [
+    'image/jpeg',
+    'image/png',
+    'image/gif',
+    'image/webp',
+    'video/mp4',
+    'video/webm',
+  ] as const,
+  STICKER_MAX_SIZE: EMOJI_STICKER_LIMITS.MAX_STICKER_SIZE,
+  EMOJI_MAX_SIZE: EMOJI_STICKER_LIMITS.MAX_EMOJI_SIZE,
+} as const;

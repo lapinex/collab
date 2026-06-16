@@ -1,0 +1,24 @@
+# Служебные файлы (НЕ ДОЛЖНЫ ПОПАСТЬ НА VERCEL)
+.env
+.env.local
+.env.*.local
+.DS_Store
+README.md
+*.log
+
+# Папки с инфраструктурой и серверным кодом (не нужны фронту)
+services/
+drizzle/
+scripts/
+lib/server/
+electron/
+docker-compose*.yml
+Dockerfile
+.dockerignore
+
+# Бэкапы и конфиги (НЕ НАДО)
+*.sql
+*.db
+*.sqlite
+.vscode/
+.idea/

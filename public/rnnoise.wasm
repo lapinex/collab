@@ -1,0 +1,9 @@
+// Placeholder rnnoise.wasm.
+// This file exists only to avoid 404 responses when the RNNoise AudioWorklet
+// tries to fetch `/rnnoise.wasm`. The actual WebAssembly noise suppression
+// binary should be provided here in real deployments.
+//
+// WebAssembly.instantiate() will fail on this text content, and the
+// RNNoise processor in `public/audio-worklets/rnnoise-processor.js` will
+// fall back to passthrough mode (no noise suppression), which is acceptable
+// behaviour when the real WASM is not available.

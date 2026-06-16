@@ -1,0 +1,28 @@
+node_modules
+**/node_modules
+.next
+.git
+.env
+.env.*
+*.log
+.DS_Store
+coverage
+.vscode
+.idea
+backups
+releases
+agent-transcripts
+# Frontend-only image: exclude backend/infra (smaller context, no scripts dependency)
+services/
+scripts/
+drizzle/
+nginx/
+.github/
+*.sql
+*.db
+*.sqlite
+cloudbuild*.yaml
+# Серверный код не нужен для next build (tsconfig exclude lib/server)
+lib/server/
+# Миграции БД — не для фронт-образа
+migrations/

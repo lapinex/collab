@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "outDir": "dist",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "baseUrl": "../..",
+    "paths": {
+      "@collab/lib/db/schema": ["lib/server/db/schema.ts"],
+      "@collab/lib/redis/pubsub": ["lib/server/redis/pubsub.ts"],
+      "@collab/lib/permissions/mvp-roles": ["lib/server/permissions/mvp-roles.ts"],
+      "@collab/lib/*": ["lib/server/*"],
+      "@collab/shared/*": ["shared/*"]
+    },
+    "rootDir": "../.."
+  },
+  "include": ["src/**/*.ts", "../../lib/server/db/schema.ts", "../../lib/server/redis/pubsub.ts", "../../lib/server/permissions/mvp-roles.ts", "../../shared/utils.ts"],
+  "exclude": ["node_modules", "dist"]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "collab-desktop",
+  "version": "0.1.0",
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1"
+  },
+  "build": {
+    "appId": "app.collab.desktop",
+    "productName": "Collab",
+    "directories": {
+      "output": "dist"
+    },
+    "files": ["main.js", "preload.js", "logotemporary.ico"],
+    "win": {
+      "target": ["nsis", "portable"],
+      "icon": "logotemporary.ico"
+    },
+    "mac": {
+      "target": ["dmg"],
+      "category": "public.app-category.social-networking",
+      "icon": "logotemporary.ico"
+    },
+    "linux": {
+      "target": ["AppImage"],
+      "icon": "logotemporary.ico"
+    }
+  }
+}

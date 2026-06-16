@@ -1,0 +1,72 @@
+# dependencies
+/node_modules
+**/node_modules/
+/.pnp
+.pnp.js
+public/_next/
+
+# build / output
+/.next/
+/out/
+/build
+services/**/dist
+*.tsbuildinfo
+next-env.d.ts
+
+# testing
+/coverage
+
+# local env and secrets
+.env
+.env*.local
+.envrc
+.env.gateway
+**/.env.gateway
+dburl.txt
+redisurl.txt
+
+# vercel
+.vercel
+
+# misc
+.DS_Store
+*.pem
+/collab.db
+/collab@0.1.0
+/next
+/npm
+/output.css
+/logotemporary.ico
+/ws-gateway.tar.gz
+
+# debug & logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs
+*.log
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# junk
+/error
+/git
+
+# Electron desktop build
+/electron/dist
+/electron/out
+/electron/node_modules
+
+# generated TS declarations & compiled output (emitted from .ts sources)
+/lib/server/**/*.d.ts
+/lib/server/**/*.d.ts.map
+/lib/server/**/*.js
+/lib/server/**/*.js.map
+/shared/*.d.ts
+/shared/*.d.ts.map
+/shared/*.js
+/shared/*.js.map

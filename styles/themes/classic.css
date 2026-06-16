@@ -1,0 +1,40 @@
+[data-theme='classic'] {
+  --bg-primary: #0f1115;
+  --bg-secondary: #161a22;
+  --bg-tertiary: #1d2330;
+  --bg-quaternary: #242c3d;
+  --bg-hover: #2b3549;
+  --bg-active: #334059;
+
+  --border-primary: #39455d;
+  --border-secondary: #45526b;
+
+  --text-primary: #f2f5ff;
+  --text-secondary: #b4bfd8;
+  --text-muted: #8c97b1;
+  --text-names: #d4dcf2;
+
+  --green-primary: #4cc38a;
+  --green-hover: #64d79d;
+  --green-active: #7cedb2;
+  --green-dark: #2f8e65;
+  --green-glow: rgba(76, 195, 138, 0.35);
+
+  --danger: #f15b5b;
+  --warning: #f2b14c;
+  --info: #5aa7ff;
+  --status-online: #4cc38a;
+  --status-idle: #f2b14c;
+  --status-dnd: #f15b5b;
+  --status-offline: #8c97b1;
+
+  --overlay-backdrop: rgba(0, 0, 0, 0.72);
+  --scrollbar-track: var(--bg-secondary);
+  --scrollbar-thumb: var(--border-secondary);
+  --scrollbar-thumb-hover: var(--text-muted);
+
+  --badge-danger: #ed4245;
+  --badge-mention: #9b59b6;
+  --badge-unread: #4f545c;
+}
+

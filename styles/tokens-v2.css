@@ -1,0 +1,31 @@
+/**
+ * Design Tokens v2 — semantic roles (intent-based).
+ * Prefer these over raw tokens for consistent UI and easier theming.
+ */
+:root,
+[data-theme] {
+  /* Surfaces */
+  --surface-panel: var(--bg-secondary);
+  --surface-elevated: var(--bg-tertiary);
+  --surface-base: var(--bg-primary);
+  --surface-skeleton: var(--bg-quaternary);
+
+  /* Interactive states */
+  --interactive-hover: var(--bg-hover);
+  --interactive-active: var(--bg-active);
+
+  /* Status / presence */
+  --status-presence-online: var(--status-online);
+  --status-presence-idle: var(--status-idle);
+  --status-presence-dnd: var(--status-dnd);
+  --status-presence-offline: var(--status-offline);
+
+  /* Text roles */
+  --text-heading: var(--text-primary);
+  --text-body: var(--text-secondary);
+  /* --text-muted and --text-names come from theme (neutral.css etc.) — no semantic alias to avoid circular refs */
+
+  /* Borders */
+  --border-subtle: var(--border-secondary);
+  --border-default: var(--border-primary);
+}
