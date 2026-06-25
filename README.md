@@ -68,7 +68,7 @@ npm run dev
 |-------|------------|
 | **Frontend** | Next.js 15, TypeScript, TanStack Query v5, Tailwind CSS, LiveKit Client |
 | **Backend API** | Express.js, PostgreSQL (Drizzle ORM), Redis, JWT Auth |
-| **Real-time** | Supabase Realtime (broadcast), Redis pub/sub |
+| **Real-time** | websocket-gateway, Redis pub/sub |
 | **Voice** | LiveKit (signaling + RTC) |
 | **Storage** | Cloudinary (CDN + optimization) |
 | **State** | Zustand (UI), TanStack Query (server state) |
